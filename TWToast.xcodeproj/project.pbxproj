@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		320714721C741154007BAFAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320714711C741154007BAFAB /* AppDelegate.swift */; };
+		320714741C741154007BAFAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320714731C741154007BAFAB /* ViewController.swift */; };
+		320714771C741154007BAFAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 320714751C741154007BAFAB /* Main.storyboard */; };
+		320714791C741154007BAFAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 320714781C741154007BAFAB /* Assets.xcassets */; };
+		3207147C1C741154007BAFAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3207147A1C741154007BAFAB /* LaunchScreen.storyboard */; };
+		320714851C741220007BAFAB /* TWToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320714841C741220007BAFAB /* TWToast.swift */; };
+		320714871C741235007BAFAB /* TWToastConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320714861C741235007BAFAB /* TWToastConfig.swift */; };
+		320714891C741267007BAFAB /* TWToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320714881C741267007BAFAB /* TWToastView.swift */; };
+		57FAC87C2EECE3793A7BDA46 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9094ABC2326352307A5A249 /* Pods.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3207146E1C741154007BAFAB /* TWToast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TWToast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		320714711C741154007BAFAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		320714731C741154007BAFAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		320714761C741154007BAFAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		320714781C741154007BAFAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3207147B1C741154007BAFAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3207147D1C741154007BAFAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		320714841C741220007BAFAB /* TWToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWToast.swift; sourceTree = "<group>"; };
+		320714861C741235007BAFAB /* TWToastConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWToastConfig.swift; sourceTree = "<group>"; };
+		320714881C741267007BAFAB /* TWToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWToastView.swift; sourceTree = "<group>"; };
+		5E238CDE1D92A3B340368B91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A3FDB3B49047914B62AB1946 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C9094ABC2326352307A5A249 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3207146B1C741154007BAFAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57FAC87C2EECE3793A7BDA46 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		320714651C741154007BAFAB = {
+			isa = PBXGroup;
+			children = (
+				320714831C741207007BAFAB /* TWToast */,
+				320714701C741154007BAFAB /* TWToastDemo */,
+				3207146F1C741154007BAFAB /* Products */,
+				C4B11A5D3195F8FECAA71CE1 /* Pods */,
+				966E5FA58C65795499D55B28 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3207146F1C741154007BAFAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3207146E1C741154007BAFAB /* TWToast.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		320714701C741154007BAFAB /* TWToastDemo */ = {
+			isa = PBXGroup;
+			children = (
+				320714711C741154007BAFAB /* AppDelegate.swift */,
+				320714731C741154007BAFAB /* ViewController.swift */,
+				320714751C741154007BAFAB /* Main.storyboard */,
+				320714781C741154007BAFAB /* Assets.xcassets */,
+				3207147A1C741154007BAFAB /* LaunchScreen.storyboard */,
+				3207147D1C741154007BAFAB /* Info.plist */,
+			);
+			path = TWToastDemo;
+			sourceTree = "<group>";
+		};
+		320714831C741207007BAFAB /* TWToast */ = {
+			isa = PBXGroup;
+			children = (
+				320714841C741220007BAFAB /* TWToast.swift */,
+				320714861C741235007BAFAB /* TWToastConfig.swift */,
+				320714881C741267007BAFAB /* TWToastView.swift */,
+			);
+			path = TWToast;
+			sourceTree = "<group>";
+		};
+		966E5FA58C65795499D55B28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9094ABC2326352307A5A249 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4B11A5D3195F8FECAA71CE1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3FDB3B49047914B62AB1946 /* Pods.debug.xcconfig */,
+				5E238CDE1D92A3B340368B91 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3207146D1C741154007BAFAB /* TWToast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 320714801C741154007BAFAB /* Build configuration list for PBXNativeTarget "TWToast" */;
+			buildPhases = (
+				9D736A1B0FBCE17F76A872CC /* Check Pods Manifest.lock */,
+				3207146A1C741154007BAFAB /* Sources */,
+				3207146B1C741154007BAFAB /* Frameworks */,
+				3207146C1C741154007BAFAB /* Resources */,
+				23115D540BE426CDEA813257 /* Embed Pods Frameworks */,
+				71AA7BFE6D97E5E85F51567F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TWToast;
+			productName = TWToast;
+			productReference = 3207146E1C741154007BAFAB /* TWToast.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		320714661C741154007BAFAB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = carq;
+				TargetAttributes = {
+					3207146D1C741154007BAFAB = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 320714691C741154007BAFAB /* Build configuration list for PBXProject "TWToast" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 320714651C741154007BAFAB;
+			productRefGroup = 3207146F1C741154007BAFAB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3207146D1C741154007BAFAB /* TWToast */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3207146C1C741154007BAFAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3207147C1C741154007BAFAB /* LaunchScreen.storyboard in Resources */,
+				320714791C741154007BAFAB /* Assets.xcassets in Resources */,
+				320714771C741154007BAFAB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23115D540BE426CDEA813257 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71AA7BFE6D97E5E85F51567F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D736A1B0FBCE17F76A872CC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3207146A1C741154007BAFAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				320714891C741267007BAFAB /* TWToastView.swift in Sources */,
+				320714741C741154007BAFAB /* ViewController.swift in Sources */,
+				320714721C741154007BAFAB /* AppDelegate.swift in Sources */,
+				320714871C741235007BAFAB /* TWToastConfig.swift in Sources */,
+				320714851C741220007BAFAB /* TWToast.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		320714751C741154007BAFAB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				320714761C741154007BAFAB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3207147A1C741154007BAFAB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3207147B1C741154007BAFAB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3207147E1C741154007BAFAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3207147F1C741154007BAFAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		320714811C741154007BAFAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3FDB3B49047914B62AB1946 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/TWToastDemo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.carq.TWToast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		320714821C741154007BAFAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E238CDE1D92A3B340368B91 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/TWToastDemo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.carq.TWToast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		320714691C741154007BAFAB /* Build configuration list for PBXProject "TWToast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3207147E1C741154007BAFAB /* Debug */,
+				3207147F1C741154007BAFAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		320714801C741154007BAFAB /* Build configuration list for PBXNativeTarget "TWToast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				320714811C741154007BAFAB /* Debug */,
+				320714821C741154007BAFAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 320714661C741154007BAFAB /* Project object */;
+}
