@@ -41,13 +41,6 @@ public class TWToast: NSObject {
         TWToast.showToastQueue()
     }
     
-    private func blockToast(targetToast: TWToast?) -> Bool{
-        if let toast = targetToast
-            where self.createdAt < toast.createdAt + TWToastConfig.blockSameMessageInterval && self.message == toast.message {
-                return true
-        }
-        return false
-    }
     
     public class func clearAll(){
         toastQueue.removeAll()
@@ -58,7 +51,20 @@ public class TWToast: NSObject {
         }
     }
     
-    private class func showToastQueue(){
+}
+
+private extension TWToast {
+    
+    private func blockToast(targetToast: TWToast?) -> Bool{
+        if let toast = targetToast
+            where self.createdAt < toast.createdAt + TWToastConfig.blockSameMessageInterval && self.message == toast.message {
+                return true
+        }
+        return false
+    }
+    
+    
+    class func showToastQueue(){
         if toastQueue.count == 0 || using == true { return }
         using = true
         let toast = toastQueue.removeFirst()
@@ -75,7 +81,7 @@ public class TWToast: NSObject {
         }
     }
     
-    private class func showToWindow(toast: TWToast, callback: (()->Void)){
+    class func showToWindow(toast: TWToast, callback: (()->Void)){
         if let window = UIApplication.sharedApplication().windows.last {
             window.addSubview(toastView)
             toastView.center = window.center
@@ -114,5 +120,4 @@ public class TWToast: NSObject {
         }
         
     }
-    
 }

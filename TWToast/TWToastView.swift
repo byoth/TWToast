@@ -53,6 +53,11 @@ class TWToastView: UIView {
         super.init(coder: aDecoder)
         setup()
     }
+}
+
+
+
+extension TWToastView {
     
     func setup(){
         userInteractionEnabled = false
@@ -104,5 +109,6 @@ class TWToastView: UIView {
         let size = messageLabel.sizeThatFits(CGSizeMake(messageLabel.bounds.size.width, CGFloat.max))
         return max(Int(size.height / messageLabel.font.lineHeight), 0)
     }
+    
     
 }
