@@ -1,6 +1,0 @@
-framework module TWCheckButton {
-  umbrella header "TWCheckButton-umbrella.h"
-
-  export *
-  module * { export * }
-}

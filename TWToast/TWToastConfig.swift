@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 public struct TWToastConfig {
-    
     static var blockSameMessageInterval: Double = 400
     static var labelInset: UIEdgeInsets = UIEdgeInsets(top: 16, left: 24, bottom: 16, right: 24)
     static var messageFontSize: CGFloat = 16
