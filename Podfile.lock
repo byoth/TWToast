@@ -1,10 +1,3 @@
-PODS:
-  - TWCheckButton (0.0.6)
+PODFILE CHECKSUM: a281b8d63d0f8f2ee9a0c3213d283dca20d84cde
 
-DEPENDENCIES:
-  - TWCheckButton (~> 0.0.6)
-
-SPEC CHECKSUMS:
-  TWCheckButton: a4fc0dbd0a9bc91a5d44921f9fee327ed5e1f7d3
-
-COCOAPODS: 0.39.0
+COCOAPODS: 1.0.1

@@ -17,13 +17,13 @@ public class TWToast: NSObject {
         return _toastView!
     }
     
-    private static var currentToast: TWToast?
-    private static var toastQueue = [TWToast]()
-    private static var using = false
+    static var currentToast: TWToast?
+    static var toastQueue = [TWToast]()
+    static var using = false
     
-    private var message: String?
-    private var duration: Double = 2.0
-    private let createdAt = NSDate.timeIntervalSinceReferenceDate()
+    var message: String?
+    var duration: Double = 2.0
+    let createdAt = NSDate.timeIntervalSinceReferenceDate
     
     public class func makeText(text: String, duration: Double = 2) -> TWToast {
         let toast = TWToast()
@@ -34,7 +34,7 @@ public class TWToast: NSObject {
     }
     
     public func show(){
-        if blockToast(TWToast.currentToast) || blockToast(TWToast.toastQueue.last) {
+        if block(toast: TWToast.currentToast) || block(toast: TWToast.toastQueue.last) {
             return
         }
         TWToast.toastQueue.append(self)
@@ -53,12 +53,14 @@ public class TWToast: NSObject {
     
 }
 
-private extension TWToast {
+extension TWToast {
     
-    private func blockToast(targetToast: TWToast?) -> Bool{
-        if let toast = targetToast
-            where self.createdAt < toast.createdAt + TWToastConfig.blockSameMessageInterval && self.message == toast.message {
-                return true
+    func block(toast: TWToast?) -> Bool{
+        guard let targetToast = toast else { return false }
+        let isSameBeforeMessage = self.message == targetToast.message
+        let isSimilarTime = self.createdAt < targetToast.createdAt + TWToastConfig.blockSameMessageInterval
+        if isSimilarTime && isSameBeforeMessage {
+            return true
         }
         return false
     }
@@ -69,7 +71,7 @@ private extension TWToast {
         using = true
         let toast = toastQueue.removeFirst()
         currentToast = toast
-        TWToast.showToWindow(toast) { () -> Void in
+        TWToast.showToWindow(toast: toast) { () -> Void in
             currentToast = nil
             using = false
             
@@ -81,40 +83,35 @@ private extension TWToast {
         }
     }
     
-    class func showToWindow(toast: TWToast, callback: (()->Void)){
-        if let window = UIApplication.sharedApplication().windows.last {
+    class func showToWindow(toast: TWToast, callback: @escaping (()->Void)){
+        if let window = UIApplication.shared.windows.last {
             window.addSubview(toastView)
             toastView.center = window.center
             toastView.translatesAutoresizingMaskIntoConstraints = false
             
             let bindings = ["view": toastView]
-            let visualConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-(>=\(TWToastConfig.windowHorizontalMargin))-[view]-(>=\(TWToastConfig.windowHorizontalMargin))-|", options:NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: bindings)
+            let visualConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=\(TWToastConfig.windowHorizontalMargin))-[view]-(>=\(TWToastConfig.windowHorizontalMargin))-|", options:NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: bindings)
             
             window.addConstraints(visualConstraints)
             
-            window.addConstraint( NSLayoutConstraint(item: toastView, attribute: .CenterX, relatedBy: .Equal, toItem: window, attribute: .CenterX, multiplier: 1, constant: 0))
+            window.addConstraint( NSLayoutConstraint(item: toastView, attribute: .centerX, relatedBy: .equal, toItem: window, attribute: .centerX, multiplier: 1, constant: 0))
             
-            window.addConstraint(NSLayoutConstraint(item: toastView, attribute: .Bottom, relatedBy: .Equal, toItem: window, attribute: .Bottom, multiplier: 1, constant: -TWToastConfig.alignBottomY))
+            window.addConstraint(NSLayoutConstraint(item: toastView, attribute: .bottom, relatedBy: .equal, toItem: window, attribute: .bottom, multiplier: 1, constant: -TWToastConfig.alignBottomY))
             
             toastView.message = toast.message
-            
-            
+
             toastView.alpha = 0
-            UIView.animateWithDuration(0.5) { () -> Void in
+            UIView.animate(withDuration: 0.5) { () -> Void in
                 toastView.alpha = 1
             }
             
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(toast.duration * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue()) {
-                UIView.animateWithDuration(
-                    0.4,
-                    animations: { () -> Void in
-                        toastView.alpha = 0
-                    })
-                    { (finish) -> Void in
-                        toastView.message = ""
-                        toastView.removeFromSuperview()
-                        callback()
+            DispatchQueue.main.asyncAfter(deadline: .now() + toast.duration) {
+                UIView.animate(withDuration: 0.4, animations: { _ in
+                    toastView.alpha = 0
+                }) { _ in
+                    toastView.message = ""
+                    toastView.removeFromSuperview()
+                    callback()
                 }
             }
         }

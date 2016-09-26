@@ -15,7 +15,7 @@
 		320714851C741220007BAFAB /* TWToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320714841C741220007BAFAB /* TWToast.swift */; };
 		320714871C741235007BAFAB /* TWToastConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320714861C741235007BAFAB /* TWToastConfig.swift */; };
 		320714891C741267007BAFAB /* TWToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320714881C741267007BAFAB /* TWToastView.swift */; };
-		57FAC87C2EECE3793A7BDA46 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9094ABC2326352307A5A249 /* Pods.framework */; };
+		8FF6B6C0CBDCFF82867F9055 /* Pods_TWToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0FC0BD2849453C0EA58D76C /* Pods_TWToast.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +29,10 @@
 		320714841C741220007BAFAB /* TWToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWToast.swift; sourceTree = "<group>"; };
 		320714861C741235007BAFAB /* TWToastConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWToastConfig.swift; sourceTree = "<group>"; };
 		320714881C741267007BAFAB /* TWToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWToastView.swift; sourceTree = "<group>"; };
-		5E238CDE1D92A3B340368B91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		A3FDB3B49047914B62AB1946 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9DD5616DCA4B98962A8FC87E /* Pods-TWToast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWToast.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWToast/Pods-TWToast.release.xcconfig"; sourceTree = "<group>"; };
+		B1C8913606898412C365C4A2 /* Pods-TWToast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWToast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWToast/Pods-TWToast.debug.xcconfig"; sourceTree = "<group>"; };
 		C9094ABC2326352307A5A249 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0FC0BD2849453C0EA58D76C /* Pods_TWToast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TWToast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57FAC87C2EECE3793A7BDA46 /* Pods.framework in Frameworks */,
+				8FF6B6C0CBDCFF82867F9055 /* Pods_TWToast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +53,8 @@
 				320714831C741207007BAFAB /* TWToast */,
 				320714701C741154007BAFAB /* TWToastDemo */,
 				3207146F1C741154007BAFAB /* Products */,
-				C4B11A5D3195F8FECAA71CE1 /* Pods */,
 				966E5FA58C65795499D55B28 /* Frameworks */,
+				BCE260E5F4231F90F9C80BE4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,15 +93,16 @@
 			isa = PBXGroup;
 			children = (
 				C9094ABC2326352307A5A249 /* Pods.framework */,
+				F0FC0BD2849453C0EA58D76C /* Pods_TWToast.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C4B11A5D3195F8FECAA71CE1 /* Pods */ = {
+		BCE260E5F4231F90F9C80BE4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A3FDB3B49047914B62AB1946 /* Pods.debug.xcconfig */,
-				5E238CDE1D92A3B340368B91 /* Pods.release.xcconfig */,
+				B1C8913606898412C365C4A2 /* Pods-TWToast.debug.xcconfig */,
+				9DD5616DCA4B98962A8FC87E /* Pods-TWToast.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -112,12 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 320714801C741154007BAFAB /* Build configuration list for PBXNativeTarget "TWToast" */;
 			buildPhases = (
-				9D736A1B0FBCE17F76A872CC /* Check Pods Manifest.lock */,
+				990F763928DC5EAA2A714C09 /* [CP] Check Pods Manifest.lock */,
 				3207146A1C741154007BAFAB /* Sources */,
 				3207146B1C741154007BAFAB /* Frameworks */,
 				3207146C1C741154007BAFAB /* Resources */,
-				23115D540BE426CDEA813257 /* Embed Pods Frameworks */,
-				71AA7BFE6D97E5E85F51567F /* Copy Pods Resources */,
+				02E70D55A9E4BDE16E253B58 /* [CP] Embed Pods Frameworks */,
+				C7A8A99FBAB9F7CC2E099A86 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,6 +142,9 @@
 				TargetAttributes = {
 					3207146D1C741154007BAFAB = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = C8LLTKJ2XT;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -175,49 +180,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		23115D540BE426CDEA813257 /* Embed Pods Frameworks */ = {
+		02E70D55A9E4BDE16E253B58 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TWToast/Pods-TWToast-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		71AA7BFE6D97E5E85F51567F /* Copy Pods Resources */ = {
+		990F763928DC5EAA2A714C09 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9D736A1B0FBCE17F76A872CC /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C7A8A99FBAB9F7CC2E099A86 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TWToast/Pods-TWToast-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -340,31 +345,38 @@
 		};
 		320714811C741154007BAFAB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3FDB3B49047914B62AB1946 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = B1C8913606898412C365C4A2 /* Pods-TWToast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = C8LLTKJ2XT;
 				INFOPLIST_FILE = "$(SRCROOT)/TWToastDemo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.carq.TWToast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		320714821C741154007BAFAB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E238CDE1D92A3B340368B91 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 9DD5616DCA4B98962A8FC87E /* Pods-TWToast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = C8LLTKJ2XT;
 				INFOPLIST_FILE = "$(SRCROOT)/TWToastDemo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.carq.TWToast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

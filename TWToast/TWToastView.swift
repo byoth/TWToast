@@ -60,7 +60,7 @@ class TWToastView: UIView {
 extension TWToastView {
     
     func setup(){
-        userInteractionEnabled = false
+        isUserInteractionEnabled = false
         clipsToBounds = true
         updateLabelStyle()
         setupBlurView()
@@ -68,7 +68,7 @@ extension TWToastView {
     }
     
     func updateLabelStyle(){
-        messageLabel.font = UIFont.systemFontOfSize(messageFontSize)
+        messageLabel.font = UIFont.systemFont(ofSize: messageFontSize)
         messageLabel.textColor = messageTextColor
     }
     
@@ -77,8 +77,8 @@ extension TWToastView {
         
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         let bindings = ["view": messageLabel]
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(\(labelInset.left))-[view]-(\(labelInset.right))-|", options:NSLayoutFormatOptions(rawValue: 0), metrics:nil, views: bindings))
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-(\(labelInset.top))-[view]-(\(labelInset.bottom))-|", options:NSLayoutFormatOptions(rawValue: 0), metrics:nil, views: bindings))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(\(labelInset.left))-[view]-(\(labelInset.right))-|", options:NSLayoutFormatOptions(rawValue: 0), metrics:nil, views: bindings))
+        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(\(labelInset.top))-[view]-(\(labelInset.bottom))-|", options:NSLayoutFormatOptions(rawValue: 0), metrics:nil, views: bindings))
     }
     
     func setupLabel(){
@@ -89,11 +89,11 @@ extension TWToastView {
     
     func setupBlurView(){
         blurView.effect = UIBlurEffect(style: blurEffect)
-        insertSubview(blurView, atIndex: 0)
+        insertSubview(blurView, at: 0)
         blurView.translatesAutoresizingMaskIntoConstraints = false
         let bindings = ["view": blurView]
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[view]|", options:NSLayoutFormatOptions(rawValue: 0), metrics:nil, views: bindings))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[view]|", options:NSLayoutFormatOptions(rawValue: 0), metrics:nil, views: bindings))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options:NSLayoutFormatOptions(rawValue: 0), metrics:nil, views: bindings))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options:NSLayoutFormatOptions(rawValue: 0), metrics:nil, views: bindings))
         
     }
     
@@ -101,12 +101,13 @@ extension TWToastView {
         if let radius = TWToastConfig.cornerRadius {
             layer.cornerRadius =  radius
         } else {
-            layer.cornerRadius =  CGRectGetHeight(blurView.bounds)/CGFloat(lineCount())/2
+            layer.cornerRadius =  blurView.bounds.height/CGFloat(lineCount())/2
         }
     }
     
     func lineCount() -> Int{
-        let size = messageLabel.sizeThatFits(CGSizeMake(messageLabel.bounds.size.width, CGFloat.max))
+        let fitsSize = CGSize(width: messageLabel.bounds.size.width, height: CGFloat.greatestFiniteMagnitude)
+        let size = messageLabel.sizeThatFits(fitsSize)
         return max(Int(size.height / messageLabel.font.lineHeight), 0)
     }
     

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TWCheckButton
 
 class ViewController: UIViewController {
     
@@ -19,8 +18,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        blurTypes?.tw_group_isRadio = true
-        textColors?.tw_group_isRadio = true
+//        blurTypes?.tw_group_isRadio = true
+//        textColors?.tw_group_isRadio = true
         
     }
     
@@ -30,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapToast(sender: AnyObject) {
-        TWToast.makeText(textView.text ?? "plz text").show()
+        TWToast.makeText(text: textView.text ?? "plz text").show()
     }
     
     @IBAction func didTapBackground(sender: AnyObject) {
@@ -38,24 +37,24 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapButton(sender: UIButton) {
-        sender.checked = true
-        
-        if let type = blurTypes?.tw_group_checked().first {
-            switch type.name {
-            case "extra_light": TWToastConfig.blurEffect = .ExtraLight
-            case "light":       TWToastConfig.blurEffect = .Light
-            case "darck":       TWToastConfig.blurEffect = .Dark
-            default: break
-            }
-        }
-        
-        if let type = textColors?.tw_group_checked().first {
-            switch type.name {
-            case "white": TWToastConfig.messageTextColor = UIColor.whiteColor()
-            case "black": TWToastConfig.messageTextColor = UIColor.blackColor()
-            default: break
-            }
-        }
+//        sender.checked = true
+//        
+//        if let type = blurTypes?.tw_group_checked().first {
+//            switch type.name {
+//            case "extra_light": TWToastConfig.blurEffect = .ExtraLight
+//            case "light":       TWToastConfig.blurEffect = .Light
+//            case "darck":       TWToastConfig.blurEffect = .Dark
+//            default: break
+//            }
+//        }
+//        
+//        if let type = textColors?.tw_group_checked().first {
+//            switch type.name {
+//            case "white": TWToastConfig.messageTextColor = UIColor.whiteColor()
+//            case "black": TWToastConfig.messageTextColor = UIColor.blackColor()
+//            default: break
+//            }
+//        }
     }
 }
 
