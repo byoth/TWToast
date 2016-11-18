@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 public struct TWToastConfig {
-    static var blockSameMessageInterval: Double = 400
-    static var labelInset: UIEdgeInsets = UIEdgeInsets(top: 16, left: 24, bottom: 16, right: 24)
-    static var messageFontSize: CGFloat = 16
-    static var messageTextColor: UIColor = UIColor.white
-    static var blurEffect: UIBlurEffectStyle = .dark
-    static var alignBottomY: CGFloat = UIScreen.main.bounds.height/10
-    static var windowHorizontalMargin: CGFloat = 16
+    static public var blockSameMessageInterval: Double = 400
+    static public var labelInset: UIEdgeInsets = UIEdgeInsets(top: 16, left: 24, bottom: 16, right: 24)
+    static public var messageFontSize: CGFloat = 16
+    static public var messageTextColor: UIColor = UIColor.white
+    static public var blurEffect: UIBlurEffectStyle = .dark
+    static public var alignBottomY: CGFloat = UIScreen.main.bounds.height/10
+    static public var windowHorizontalMargin: CGFloat = 16
     
-    static var cornerRadius: CGFloat?
+    static public var cornerRadius: CGFloat?
 }

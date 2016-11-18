@@ -25,7 +25,7 @@ public class TWToast: NSObject {
     var duration: Double = 2.0
     let createdAt = NSDate.timeIntervalSinceReferenceDate
     
-    public class func makeText(text: String, duration: Double = 2) -> TWToast {
+    public class func makeText(_ text: String, duration: Double = 2) -> TWToast {
         let toast = TWToast()
         toast.message = text
         toast.duration = duration
@@ -90,7 +90,7 @@ extension TWToast {
             toastView.translatesAutoresizingMaskIntoConstraints = false
             
             let bindings = ["view": toastView]
-            let visualConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=\(TWToastConfig.windowHorizontalMargin))-[view]-(>=\(TWToastConfig.windowHorizontalMargin))-|", options:NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: bindings)
+            let visualConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=\(TWToastConfig.windowHorizontalMargin))-[view]-(>=\(TWToastConfig.windowHorizontalMargin))-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: bindings)
             
             window.addConstraints(visualConstraints)
             
