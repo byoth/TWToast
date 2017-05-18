@@ -10,51 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var blurTypes: [UIButton]?
-    @IBOutlet var textColors: [UIButton]?
-    
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        blurTypes?.tw_group_isRadio = true
-//        textColors?.tw_group_isRadio = true
-        
+//        TWToastConfig.blurEffect = .extraLight
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+
+    @IBAction func didTapToast(_ sender: Any) {
+        TWToast.makeText(textView.text ?? "plz text").show()
     }
     
-    @IBAction func didTapToast(sender: AnyObject) {
-        TWToast.makeText(text: textView.text ?? "plz text").show()
-    }
-    
-    @IBAction func didTapBackground(sender: AnyObject) {
+    @IBAction func didTapBackground(_ sender: Any) {
         textView.endEditing(true)
     }
     
-    @IBAction func didTapButton(sender: UIButton) {
-//        sender.checked = true
-//        
-//        if let type = blurTypes?.tw_group_checked().first {
-//            switch type.name {
-//            case "extra_light": TWToastConfig.blurEffect = .ExtraLight
-//            case "light":       TWToastConfig.blurEffect = .Light
-//            case "darck":       TWToastConfig.blurEffect = .Dark
-//            default: break
-//            }
-//        }
-//        
-//        if let type = textColors?.tw_group_checked().first {
-//            switch type.name {
-//            case "white": TWToastConfig.messageTextColor = UIColor.whiteColor()
-//            case "black": TWToastConfig.messageTextColor = UIColor.blackColor()
-//            default: break
-//            }
-//        }
-    }
 }
 

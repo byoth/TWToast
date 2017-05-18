@@ -22,7 +22,7 @@ public class TWToast: NSObject {
     static var using = false
     
     var message: String?
-    var duration: Double = 2.0
+    var duration: Double = 12.0
     let createdAt = NSDate.timeIntervalSinceReferenceDate
     
     public class func makeText(_ text: String, duration: Double = 2) -> TWToast {
@@ -83,36 +83,41 @@ extension TWToast {
         }
     }
     
-    class func showToWindow(toast: TWToast, callback: @escaping (()->Void)){
-        if let window = UIApplication.shared.windows.last {
-            window.addSubview(toastView)
-            toastView.center = window.center
-            toastView.translatesAutoresizingMaskIntoConstraints = false
-            
-            let bindings = ["view": toastView]
-            let visualConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=\(TWToastConfig.windowHorizontalMargin))-[view]-(>=\(TWToastConfig.windowHorizontalMargin))-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: bindings)
-            
-            window.addConstraints(visualConstraints)
-            
-            window.addConstraint( NSLayoutConstraint(item: toastView, attribute: .centerX, relatedBy: .equal, toItem: window, attribute: .centerX, multiplier: 1, constant: 0))
-            
-            window.addConstraint(NSLayoutConstraint(item: toastView, attribute: .bottom, relatedBy: .equal, toItem: window, attribute: .bottom, multiplier: 1, constant: -TWToastConfig.alignBottomY))
-            
-            toastView.message = toast.message
-
-            toastView.alpha = 0
-            UIView.animate(withDuration: 0.5) { () -> Void in
-                toastView.alpha = 1
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + toast.duration) {
-                UIView.animate(withDuration: 0.4, animations: { _ in
-                    toastView.alpha = 0
-                }) { _ in
-                    toastView.message = ""
-                    toastView.removeFromSuperview()
-                    callback()
-                }
+    class func showToWindow(toast: TWToast, callback: @escaping (()->Void)) {
+        let window = TWToastWindow.shared
+        guard let view = window.rootViewController?.view else { return }
+        
+        TWToastWindow.shared.makeKeyAndVisible()
+        TWToastWindow.shared.backgroundColor = .clear
+        
+        view.addSubview(toastView)
+        toastView.center = view.center
+        toastView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let bindings = ["view": toastView]
+        let visualConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(>=\(TWToastConfig.windowHorizontalMargin))-[view]-(>=\(TWToastConfig.windowHorizontalMargin))-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: bindings)
+        
+        view.addConstraints(visualConstraints)
+        
+        view.addConstraint( NSLayoutConstraint(item: toastView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0))
+        
+        view.addConstraint(NSLayoutConstraint(item: toastView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -TWToastConfig.alignBottomY))
+        
+        toastView.message = toast.message
+        
+        toastView.alpha = 0
+        UIView.animate(withDuration: 0.5) { () -> Void in
+            toastView.alpha = 1
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + toast.duration) {
+            UIView.animate(withDuration: 0.4, animations: { _ in
+                toastView.alpha = 0
+            }) { _ in
+                toastView.message = ""
+                toastView.removeFromSuperview()
+                window.isHidden = true
+                callback()
             }
         }
         

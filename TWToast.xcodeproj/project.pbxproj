@@ -15,6 +15,7 @@
 		320714851C741220007BAFAB /* TWToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320714841C741220007BAFAB /* TWToast.swift */; };
 		320714871C741235007BAFAB /* TWToastConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320714861C741235007BAFAB /* TWToastConfig.swift */; };
 		320714891C741267007BAFAB /* TWToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320714881C741267007BAFAB /* TWToastView.swift */; };
+		32F46ED91ECD5F09007FA2EB /* TWToastWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F46ED81ECD5F09007FA2EB /* TWToastWindow.swift */; };
 		8FF6B6C0CBDCFF82867F9055 /* Pods_TWToast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0FC0BD2849453C0EA58D76C /* Pods_TWToast.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		320714841C741220007BAFAB /* TWToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWToast.swift; sourceTree = "<group>"; };
 		320714861C741235007BAFAB /* TWToastConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWToastConfig.swift; sourceTree = "<group>"; };
 		320714881C741267007BAFAB /* TWToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWToastView.swift; sourceTree = "<group>"; };
+		32F46ED81ECD5F09007FA2EB /* TWToastWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWToastWindow.swift; sourceTree = "<group>"; };
 		9DD5616DCA4B98962A8FC87E /* Pods-TWToast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWToast.release.xcconfig"; path = "Pods/Target Support Files/Pods-TWToast/Pods-TWToast.release.xcconfig"; sourceTree = "<group>"; };
 		B1C8913606898412C365C4A2 /* Pods-TWToast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TWToast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TWToast/Pods-TWToast.debug.xcconfig"; sourceTree = "<group>"; };
 		C9094ABC2326352307A5A249 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 				320714841C741220007BAFAB /* TWToast.swift */,
 				320714861C741235007BAFAB /* TWToastConfig.swift */,
 				320714881C741267007BAFAB /* TWToastView.swift */,
+				32F46ED81ECD5F09007FA2EB /* TWToastWindow.swift */,
 			);
 			path = TWToast;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F46ED91ECD5F09007FA2EB /* TWToastWindow.swift in Sources */,
 				320714891C741267007BAFAB /* TWToastView.swift in Sources */,
 				320714741C741154007BAFAB /* ViewController.swift in Sources */,
 				320714721C741154007BAFAB /* AppDelegate.swift in Sources */,
