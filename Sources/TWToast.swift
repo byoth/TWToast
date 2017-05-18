@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TWToast: NSObject {
+open class TWToast: NSObject {
     static var _toastView: TWToastView?
     static var toastView: TWToastView {
         if _toastView == nil {
@@ -23,9 +23,9 @@ public class TWToast: NSObject {
     
     var message: String?
     var duration: Double = 12.0
-    let createdAt = NSDate.timeIntervalSinceReferenceDate
+    let createdAt = Date.timeIntervalSinceReferenceDate
     
-    public class func makeText(_ text: String, duration: Double = 2) -> TWToast {
+    open class func makeText(_ text: String, duration: Double = 2) -> TWToast {
         let toast = TWToast()
         toast.message = text
         toast.duration = duration
@@ -33,8 +33,8 @@ public class TWToast: NSObject {
         return toast
     }
     
-    public func show(){
-        if block(toast: TWToast.currentToast) || block(toast: TWToast.toastQueue.last) {
+    open func show(){
+        if block(TWToast.currentToast) || block(TWToast.toastQueue.last) {
             return
         }
         TWToast.toastQueue.append(self)
@@ -42,7 +42,7 @@ public class TWToast: NSObject {
     }
     
     
-    public class func clearAll(){
+    open class func clearAll(){
         toastQueue.removeAll()
         currentToast = nil
         if let toastView = _toastView {
@@ -55,7 +55,7 @@ public class TWToast: NSObject {
 
 extension TWToast {
     
-    func block(toast: TWToast?) -> Bool{
+    func block(_ toast: TWToast?) -> Bool{
         guard let targetToast = toast else { return false }
         let isSameBeforeMessage = self.message == targetToast.message
         let isSimilarTime = self.createdAt < targetToast.createdAt + TWToastConfig.blockSameMessageInterval
@@ -71,7 +71,7 @@ extension TWToast {
         using = true
         let toast = toastQueue.removeFirst()
         currentToast = toast
-        TWToast.showToWindow(toast: toast) { () -> Void in
+        TWToast.showToWindow(toast) { () -> Void in
             currentToast = nil
             using = false
             
@@ -83,7 +83,7 @@ extension TWToast {
         }
     }
     
-    class func showToWindow(toast: TWToast, callback: @escaping (()->Void)) {
+    class func showToWindow(_ toast: TWToast, callback: @escaping (()->Void)) {
         let window = TWToastWindow.shared
         guard let view = window.rootViewController?.view else { return }
         
