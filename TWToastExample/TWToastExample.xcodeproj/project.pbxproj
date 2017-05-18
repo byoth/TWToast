@@ -118,6 +118,7 @@
 					32F46EEB1ECD68CF007FA2EB = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = C8LLTKJ2XT;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};

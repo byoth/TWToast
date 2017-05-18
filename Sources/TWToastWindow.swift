@@ -12,7 +12,7 @@ import UIKit
 final class TWToastWindow: UIWindow {
     static var shared: TWToastWindow = .init()
     
-    private var baseViewController: UIViewController = .init()
+    fileprivate var baseViewController: UIViewController = .init()
     
 //    override var frame: CGRect {
 //        set { super.frame = UIScreen.main.bounds }
@@ -30,7 +30,7 @@ final class TWToastWindow: UIWindow {
     }
     
     
-    private func setup() {
+    fileprivate func setup() {
         baseViewController.view.backgroundColor = .clear
         
         self.windowLevel = UIWindowLevelAlert + 1
