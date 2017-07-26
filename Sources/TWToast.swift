@@ -25,7 +25,7 @@ open class TWToast: NSObject {
     var duration: Double = 12.0
     let createdAt = Date.timeIntervalSinceReferenceDate
     
-    open class func makeText(_ text: String, duration: Double = 2) -> TWToast {
+    open class func makeText(_ text: String, duration: Double = 3) -> TWToast {
         let toast = TWToast()
         toast.message = text
         toast.duration = duration
@@ -106,12 +106,12 @@ extension TWToast {
         toastView.message = toast.message
         
         toastView.alpha = 0
-        UIView.animate(withDuration: 0.5) { () -> Void in
+        UIView.animate(withDuration: 0.3) { () -> Void in
             toastView.alpha = 1
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + toast.duration) {
-            UIView.animate(withDuration: 0.4, animations: { _ in
+            UIView.animate(withDuration: 0.3, animations: { _ in
                 toastView.alpha = 0
             }) { _ in
                 toastView.message = ""
